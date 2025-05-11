@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portofolio pribadi minimalis dengan font Fira Sans dan latar belakang gelap." />
+  <title>Portofolio - Rizal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<style>
+     *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      background: #121212;
+      color: #f0f0f0;
+      font-family: 'Fira Sans', sans-serif;
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 20px 40px;
+      background: #181818;
+    }
+    /* Navbar top */
+    header#topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid #333;
+      user-select: none;
+      flex-wrap: wrap;
+    }
+    header#topbar .nickname {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #eaeaea;
+      user-select: text;
+      white-space: nowrap;
+    }
+    nav#navbar {
+      display: flex;
+      gap: 24px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+    header#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 14px 20px; 
+  border-bottom: 1px solid #333;
+  user-select: none;
+}
+
+.nickname {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #eaeaea;
+  user-select: text;
+  white-space: nowrap;
+}
+
+nav#navbar {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+nav#navbar.hidden {
+  display: none; 
+}
+
+.menu-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  color: #eaeaea;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 20px; 
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav#navbar {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  nav#navbar.show {
+    display: flex; 
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+}
+header#topbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 14px 20px; 
+  border-bottom: 1px solid #333;
+  user-select: none;
+}
+
+.nickname {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #eaeaea;
+  user-select: text;
+  white-space: nowrap;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center; 
+}
+
+nav#navbar {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+nav#navbar.hidden {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #eaeaea;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 20px; 
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav#navbar {
+    display: none; 
+    flex-direction: column; 
+    gap: 10px;
+    width: 100%;
+  }
+.project-card {
+        max-width: 100%;
+    }
+  nav#navbar.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+}
+
+    nav#navbar a {
+      color: #eaeaea;
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 4px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+    nav#navbar a:hover,
+    nav#navbar a:focus {
+      background-color: #333;
+      outline: none;
+      cursor: pointer;
+    }
+    .profile-section img {
+  transition: transform 0.3s ease; /* Transisi untuk efek zoom */
+}
+
+.profile-section img.clicked {
+  transform: scale(1.1); /* Zoom in saat diklik */
+}
+
+    header.profile-section {
+      text-align: center;
+      margin: 40px 0;
+      user-select: none;
+    }
+    header.profile-section img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #555;
+      transition: border-color 0.3s ease;
+    }
+    header.profile-section img:hover,
+    header.profile-section img:focus {
+      border-color: #888;
+      outline: none;
+      cursor: default;
+    }
+    header.profile-section h1 {
+      font-weight: 700;
+      font-size: 2.6rem;
+      margin-bottom: 8px;
+      color: #f7f7f7;
+      user-select: text;
+    }
+    header.profile-section p {
+      font-weight: 400;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #ccc;
+      user-select: text;
+    }
+    /* Section Titles */
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+      user-select: text;
+      border-bottom: 1px solid #333;
+      padding-bottom: 6px;
+    }
+    /* About Me Section */
+    section#about-me {
+      margin-bottom: 48px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      user-select: none;
+      align-items: flex-start;
+    }
+    section#about-me .text {
+      flex: 1 1 100%;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ddd;
+      user-select: text;
+      min-width: 280px;
+      order: 1;
+    }
+    section#about-me .image {
+      flex: 0 0 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 280px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.35);
+      border: 1px solid #444;
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+      margin-top: 0;
+      order: 2;
+    }
+   .about-me-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('asset/zal.jpg'); /* Gradasi gelap di atas gambar */
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 12px;
+  color: #f0f0f0; 
+  position: relative; }
+
+.about-me-background .text {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+
+    /* Experience Section */
+    section#experience {
+      margin-bottom: 48px;
+      user-select: none;
+      color: #ddd;
+    }
+    section#experience ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-left: 0;
+    }
+    section#experience li {
+      background: #1b1b1b;
+      padding: 18px 16px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+    }
+    section#experience li:hover,
+    section#experience li:focus {
+      box-shadow: 0 5px 18px rgba(255,255,255,0.15);
+      outline: none;
+    }
+    section#experience li h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #eee;
+      user-select: text;
+    }
+    section#experience li p {
+      font-size: 0.95rem;
+      color: #bbb;
+      user-select: text;
+      line-height: 1.4;
+    }
+    /* Skills Section */
+    section#skills {
+      margin-bottom: 48px;
+    }
+    section#skills h2 {
+      margin-bottom: 16px;
+    }
+    ul.skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding-left: 0;
+    }
+    li.skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: text;
+    }
+    li.skill-item strong {
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+    .skill-bar {
+      flex-grow: 1;
+      max-width: 250px;
+      height: 12px;
+      background: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-left: 12px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 8px;
+      transition: width 0.8s ease;
+    }
+    .skill-html { width: 90%; background-color: #ffffff; }
+    .skill-css { width: 85%; background-color: #ffffff; }
+    .skill-js { width: 80%; background-color: #ffffff; color:#333; }
+    .skill-react { width: 75%; background-color: #ffffff; color:#333; }
+    /* Projects Section */
+    section#projects {
+      margin-bottom: 48px;
+      user-select: none;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 24px;
+      justify-items: center;
+    }
+    .project-card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      border: 1px solid #333;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.7);
+      width: 100%;
+      max-width: 320px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+    .project-card:hover,
+    .project-card:focus-visible {
+      box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #444;
+      user-select: none;
+    }
+    .project-content {
+      padding: 16px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #ddd;
+    }
+    .project-content h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      user-select: text;
+      color: #fafafa;
+    }
+    .project-content p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #bbb;
+      user-select: text;
+    }
+    /* Contact Section */
+    section#contact-me {
+      text-align: center;
+      user-select: none;
+    
+    }
+    .contact-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('asset/bobotoh.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-radius: 12px;
+  color: #f0f0f0; 
+  text-align: center; 
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #fdfcfc; 
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    section#contact-me .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 34px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    section#contact-me .contact-icons a {
+      background: #222;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border: 1px solid #444;
+      user-select: none;
+      box-shadow: 0 0 6px rgba(255,255,255,0.1);
+    }
+    section#contact-me .contact-icons a:hover,
+    section#contact-me .contact-icons a:focus {
+      background-color: #555;
+      transform: scale(1.15);
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 0 14px #bbb;
+    }
+    section#contact-me .contact-icons img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+      filter: brightness(100%) contrast(110%);
+      transition: filter 0.3s ease;
+    }
+    section#contact-me .contact-icons a:hover img,
+    section#contact-me .contact-icons a:focus img {
+      filter: brightness(120%) contrast(130%);
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #666;
+      padding-top: 28px;
+      padding-bottom: 12px;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      body {
+        padding: 15px 15px 40px;
+      }
+      header#topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        border-bottom: none;
+        padding-bottom: 8px;
+      }
+      nav#navbar {
+        gap: 12px;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      section#about-me {
+        flex-direction: column;
+        margin-bottom: 36px;
+      }
+      section#about-me .image {
+        margin-top: 12px;
+        order: 1;
+      }
+      section#about-me .text {
+        order: 0;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      ul.skill-list {
+        gap: 12px;
+      }
+      li.skill-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .skill-bar {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 6px;
+      }
+    }
+</style>
+<body>
+ <header id="topbar">
+  <div class="nickname" tabindex="0" aria-label="Nama panggilan Anda">Rizal</div>
+  <div class="nav-container">
+    <nav id="navbar" role="navigation" aria-label="Navigasi utama">
+      <a href="#profile-section">Profil</a>
+      <a href="#about-me">About me</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skill</a>
+      <a href="#projects">My Projects</a>
+      <a href="#contact-me">Contact Me</a>
+    </nav>
+    <button id="menu-toggle" aria-label="Toggle navigation" class="menu-toggle">☰</button>
+  </div>
+</header>
+
+
+
+  <header id="profile-section" class="profile-section" tabindex="0">
+  <img id="profile-pic" src="asset/rizal.jpg" alt="Foto profil Nama Anda" />
+  <h1>Rizal Rafsanzani Rahayu</h1>
+  <p>23110558</p>
+  <p>Mahasiswa Informatika | Web Developer Pemula</p>
+</header>
+
+    
+  </header>
+
+  <main role="main">
+  <section id="about-me" aria-labelledby="about-title" class="about-me-background">
+  <h2 id="about-title">| About me</h2>
+  <div class="text">
+    <p>
+      Saya adalah seorang pemula di dunia pemrograman yang penuh semangat dan ambisi untuk terus belajar dan berkembang. Meskipun masih dalam tahap awal, saya percaya bahwa dengan konsistensi, rasa ingin tahu yang tinggi, dan kerja keras, saya dapat mencapai tujuan saya menjadi developer yang handal. Saya senang mengeksplorasi teknologi baru, membangun proyek kecil sebagai latihan, dan terus mencari tantangan baru untuk meningkatkan kemampuan saya. Bagi saya, setiap baris kode adalah langkah menuju masa depan yang lebih baik. Perjalanan ini baru dimulai, namun ambisiku akan membawaku jauh—melampaui batas yang dulu kupikir tak mungkin kulalui.
+    </p>
+  </div>
+</section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Pengalaman</h2>
+      <ul>
+        <li tabindex="0">
+          <h3>Pengelola Aplikasi Pemilihan Umum</h3>
+          <p>Mengerjakan pengembangan fitur aplikasi direkap. dan memantau pemakai aplikasi bahwa aplikasi tidak ada trouble.</p>
+        </li>
+        <li tabindex="0">
+          <h3>Desain Banner & Logo</h3>
+          <p>Membantu teman atau UMKM lokal dengan desain banner promosi & logo menggunakan Canva. Menyusun desain sesuai kebutuhan klien dengan komunikasi yang baik.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <ul class="skill-list" aria-label="Daftar keahlian">
+        <li class="skill-item" tabindex="0">
+          <strong>HTML</strong>
+          <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill skill-html"></div></div>
+        </li>
+        <li class="skill-item" tabindex="0">
+          <strong>CSS</strong>
+          <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill skill-css"></div></div>
+        </li>
+        <li class="skill-item" tabindex="0">
+          <strong>JavaScript</strong>
+          <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill skill-js"></div></div>
+        </li>
+        <li class="skill-item" tabindex="0">
+          <strong>React</strong>
+          <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill skill-react"></div></div>
+        </li>
+        <li class="skill-item" tabindex="0">
+          <strong>Graphic Desain</strong>
+          <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill skill-react"></div></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card" tabindex="0" aria-label="Project website toko online">
+          <img class="project-image" src="asset/webshop.png" alt="Screenshot website toko online" />
+          <div class="project-content">
+            <h3>Project 1: Website Toko Online</h3>
+            <p>Mengembangkan website toko online responsif dengan HTML, CSS dan JavaScript untuk kemudahan pembelian produk secara cepat dan efisien.</p>
+          </div>
+        </article>
+        <article class="project-card" tabindex="0" aria-label="Project Desain tampilan Grafis">
+          <img class="project-image" src="asset/spiderman.jpg" alt="Poto Desain tampilan Grafis" />
+          <div class="project-content">
+            <h3>Project 2: Desain Grafis</h3>
+            <p>MeMembuat berbagai desain promosi seperti banner, poster, dan konten Instagram untuk produk UMKM lokal. Desain dibuat menggunakan Canva dengan gaya modern . Fokus pada kombinasi warna cerah, tipografi jelas, dan visual produk yang menonjol.</p>
+          </div>
+        </article>
+        </article>
+        <article class="project-card" tabindex="0" aria-label="Project Desain tampilan Grafis">
+          <img class="project-image" src="asset/motor.jpg" alt="Poto Desain tampilan Grafis" />
+          <div class="project-content">
+            <h3>Project 3: Project Motor</h3>
+            <p>Membangun ulang motor dari 100% ke 0% dengan berbagai kerusakan dialami. Karena belakangan ini motor sering mengalami kerusakan.</p>
+          </div>
+        </article>
+         <article class="project-card" tabindex="0" aria-label="Project Desain tampilan Grafis">
+          <img class="project-image" src="asset/sepatu.jpg" alt="Poto Desain tampilan Grafis" />
+          <div class="project-content">
+            <h3>Project 3: Project Menjual Sepatu</h3>
+            <p>Membangun ulang motor dari 100% ke 0% dengan berbagai kerusakan dialami. Karena belakangan ini motor sering mengalami kerusakan.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact-me" aria-labelledby="contact-title" class="contact-background">
+  <h2 id="contact-title">Contact me</h2>
+  <p class="contact-text">YOUR INNER CHILD IS STILL ROOTING FOR YOU TO WIN</p>
+  <p class="contact-text">"I'm a man, I'll be okay"
+even on days when I'm not okay, even on days when I feel like crying, on days when I feel like,struggling mentally but who cares im a man.</p>
+  <div class="contact-icons" role="list">
+    <a role="listitem" href="https://instagram.com/izalslayy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/1409/1409946.png" alt="Logo Instagram" />
+    </a>
+    <a role="listitem" href="https://github.com/rizalrfsnz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo GitHub" />
+    </a>
+    <a role="listitem" href="https://wa.me/6281463818722" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Logo WhatsApp" />
+    </a>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    © 2025 Rizal Rafsanzani R. Semua hak cipta dilindungi.
+  </footer>
+<script src="script.js"></script> 
+
+</body>
+</html>
