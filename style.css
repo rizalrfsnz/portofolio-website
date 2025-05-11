@@ -1,4 +1,3 @@
-
      *, *::before, *::after {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -70,7 +69,6 @@ nav#navbar.hidden {
   display: none; 
 }
 
-
 .menu-toggle {
   display: none; 
   background: none;
@@ -82,21 +80,17 @@ nav#navbar.hidden {
 }
 
 /* Responsive */
-@media (min-width: 700px) {
-  nav#navbar {
-    display: flex;
-  }
-}
-
 @media (max-width: 700px) {
   nav#navbar {
-    display: none; 
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
   }
 
   nav#navbar.show {
     display: flex; 
   }
-}
 
   .menu-toggle {
     display: block; 
@@ -536,5 +530,4 @@ nav#navbar.hidden {
         max-width: 100%;
         margin-left: 0;
         margin-top: 6px;
-      }
-    }
+      } }
