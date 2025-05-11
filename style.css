@@ -1,4 +1,5 @@
-   *, *::before, *::after {
+
+     *, *::before, *::after {
       margin: 0; padding: 0; box-sizing: border-box;
     }
     html {
@@ -40,6 +41,126 @@
       font-size: 0.9rem;
       flex-wrap: wrap;
     }
+    header#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 14px 20px; 
+  border-bottom: 1px solid #333;
+  user-select: none;
+}
+
+.nickname {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #eaeaea;
+  user-select: text;
+  white-space: nowrap;
+}
+
+nav#navbar {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+nav#navbar.hidden {
+  display: none; 
+}
+
+.menu-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  color: #eaeaea;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 20px; 
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav#navbar {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  nav#navbar.show {
+    display: flex; 
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+}
+header#topbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 14px 20px; 
+  border-bottom: 1px solid #333;
+  user-select: none;
+}
+
+.nickname {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #eaeaea;
+  user-select: text;
+  white-space: nowrap;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center; 
+}
+
+nav#navbar {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+nav#navbar.hidden {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #eaeaea;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 20px; 
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  nav#navbar {
+    display: none; 
+    flex-direction: column; 
+    gap: 10px;
+    width: 100%;
+  }
+.project-card {
+        max-width: 100%;
+    }
+  nav#navbar.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block; 
+  }
+}
+
     nav#navbar a {
       color: #eaeaea;
       text-decoration: none;
@@ -53,7 +174,14 @@
       outline: none;
       cursor: pointer;
     }
-    /* Profile Section */
+    .profile-section img {
+  transition: transform 0.3s ease; /* Transisi untuk efek zoom */
+}
+
+.profile-section img.clicked {
+  transform: scale(1.1); /* Zoom in saat diklik */
+}
+
     header.profile-section {
       text-align: center;
       margin: 40px 0;
@@ -134,12 +262,11 @@
   background-position: center;
   padding: 40px;
   border-radius: 12px;
-  color: #f0f0f0; /* Warna teks agar kontras dengan latar belakang */
-  position: relative; /* Untuk mengatur posisi elemen di dalamnya */
-}
+  color: #f0f0f0; 
+  position: relative; }
 
 .about-me-background .text {
-  background-color: rgba(0, 0, 0, 0.5); /* Memberikan latar belakang semi-transparan untuk teks */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 20px;
   border-radius: 8px;
 }
@@ -309,8 +436,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
-
 
     section#contact-me .contact-icons {
       display: flex;
