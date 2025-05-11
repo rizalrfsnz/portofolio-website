@@ -70,6 +70,7 @@ nav#navbar.hidden {
   display: none; 
 }
 
+
 .menu-toggle {
   display: none; 
   background: none;
@@ -81,17 +82,21 @@ nav#navbar.hidden {
 }
 
 /* Responsive */
+@media (min-width: 700px) {
+  nav#navbar {
+    display: flex;
+  }
+}
+
 @media (max-width: 700px) {
   nav#navbar {
-    display: none;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    display: none; 
   }
 
   nav#navbar.show {
     display: flex; 
   }
+}
 
   .menu-toggle {
     display: block; 
